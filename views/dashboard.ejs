@@ -1,0 +1,44 @@
+<%- include('header') -%>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+      <a class="navbar-brand mx-auto" id="sitename" href="#">PhoneKart</a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="btn btn-dark rounded-pill me-4" href="/logout" id="loggo">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+       
+  
+<section><div class="container mt-4 mb-5" >
+
+    <div class="row ms-0 card-text " >
+    <% products.forEach(function(product) { %>
+       
+        <div class="col-md-3 me-0 gx-5 gy-5 mt-4  " >
+
+        
+        <div class="card shadow-lg" style="width: 18rem;">
+            <img class="card-img-top mt-2 ms-3" src="<%= product.img %>" alt="Card image cap" style="height: 18em; width: 90%; object-fit: contain;">
+            <div class="card-body mb-3 text-center bg-body-tertiary" style="height: 15em;">
+                <h5 class="pt-4 card-title  fw-bold"><%= product.model %></h5>
+                <p class="pt-2 text-center  card-text desc "><%= product.brand %></p>
+                <p class="pt-2 text-center  card-text desc "><%= product.price %></p>
+                <a href="#" class="btn justify-content-center  btn-dark shadow-lg  btn-card rounded-pill ">Buy</a>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <% }); %>
+</div>
+</div>
+    </section>
+
+<%- include('footer') -%>
